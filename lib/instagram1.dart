@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class InstagramView extends StatefulWidget {
-  const InstagramView({super.key});
+InstagramView({super.key});
 
   @override
   State<InstagramView> createState() => _InstagramViewState();
@@ -45,11 +45,11 @@ class _InstagramViewState extends State<InstagramView> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const Text(
+        title:Text(
           "Instagram",
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,),
         ),
-        actions: const [
+        actions:[
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Icon(Icons.message_rounded),
@@ -57,7 +57,7 @@ class _InstagramViewState extends State<InstagramView> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding:EdgeInsets.all(8.0),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -65,7 +65,7 @@ class _InstagramViewState extends State<InstagramView> {
                 height: 100,
                 child: Row(
                   children: [
-                    const Column(
+                  Column(
                       children: [
                         Stack(
                           children: [
@@ -96,7 +96,7 @@ class _InstagramViewState extends State<InstagramView> {
                         itemCount: names.length,
                         itemBuilder: (context, index) {
                           return Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding:EdgeInsets.symmetric(horizontal: 8.0),
                             child: Column(
                               children: [
                                 CircleAvatar(
@@ -105,7 +105,7 @@ class _InstagramViewState extends State<InstagramView> {
                                 ),
                                 Text(
                                   names[index],
-                                  style: const TextStyle(fontWeight: FontWeight.bold),
+                                  style:TextStyle(fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
@@ -116,11 +116,11 @@ class _InstagramViewState extends State<InstagramView> {
                   ],
                 ),
               ),
-              const SizedBox(height: 20,),
+            SizedBox(height: 20,),
               Column(
                crossAxisAlignment: CrossAxisAlignment.start,
                children: [
-                 const Row(
+              Row(
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: [
                      Row(
@@ -138,17 +138,17 @@ class _InstagramViewState extends State<InstagramView> {
                      ),
                    ],
                  ),
-                 const SizedBox(height: 10,),
+              SizedBox(height: 10,),
                  SizedBox(
                    height: 300,
-                   child: const Image(
+                   child:Image(
                      image: AssetImage("assets/luffy.jpeg"),
                      fit: BoxFit.cover,
                    ),
                  ),
                  SizedBox(
                         height: 50,
-                        child: const Row(
+                        child:Row(
                         
                          children: [
                            Icon(Icons.favorite,color: Colors.red,),
@@ -162,14 +162,14 @@ class _InstagramViewState extends State<InstagramView> {
                          ],
                         ),
                  ),
-                 const Text("2,33,589 likes"),
-                 const Text("Anusha: hloo cheen dapak dam damm",style: TextStyle(fontWeight: FontWeight.bold),),
-                 const Text("View all 34,500 comments"),
-                 const SizedBox(height: 10,),
+              Text("2,33,589 likes"),
+              Text("Anusha: hloo cheen dapak dam damm",style: TextStyle(fontWeight: FontWeight.bold),),
+              Text("View all 34,500 comments"),
+              SizedBox(height: 10,),
                  Row(
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: [
-                     const Row(
+                  Row(
                        children: [
                          CircleAvatar(backgroundImage: AssetImage("assets/pomerian.jpeg"),),
                          SizedBox(width: 10,),
@@ -183,15 +183,15 @@ class _InstagramViewState extends State<InstagramView> {
                        children: [
                          
                          Image.asset("assets/smile1.png",width: 20,height: 20,),
-                         const SizedBox(width: 10,),
+                      SizedBox(width: 10,),
                          Image.asset("assets/smile2.png",width: 20,height: 20,),
-                         const SizedBox(width: 10,),
+                      SizedBox(width: 10,),
                          Image.asset("assets/add.png",width: 20,height: 20,),
                        ],
                      ),
                    ],
                  ),
-                 const Text("2 days ago"),
+              Text("2 days ago"),
                  
                ],
                               ),

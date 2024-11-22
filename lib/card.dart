@@ -14,7 +14,7 @@ class _Exercise2State extends State<Exercise2> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 115, 192, 165),
       ),
-      body: const Column(
+      body:  Column(
         children: [
         
          Padding(

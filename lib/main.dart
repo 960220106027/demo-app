@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:homeapp/2nd%20Ques/loginPage.dart';
+import 'package:homeapp/!stQuestion/detailPage.dart';
+import 'package:homeapp/!stQuestion/homeFurniture.dart';
+import 'package:homeapp/API/api.dart';
 import 'package:homeapp/AppBar.dart';
+import 'package:homeapp/Design/design.dart';
+import 'package:homeapp/Design/detail.dart';
 import 'package:homeapp/FruitApp2.dart';
 import 'package:homeapp/SetState1.dart';
 import 'package:homeapp/WhatsApp.dart';
+import 'package:homeapp/Widget/Widgetscreen.dart';
 import 'package:homeapp/avatar.dart';
 import 'package:homeapp/bottomTab.dart';
 import 'package:homeapp/box1.dart';
@@ -35,9 +42,11 @@ import 'package:homeapp/container.dart';
 import 'package:homeapp/excersice1.dart';
 import 'package:homeapp/card.dart';
 import 'package:homeapp/login.dart';
+import 'package:homeapp/splash.dart';
 import 'package:homeapp/status.dart';
 import 'package:homeapp/textFormField.dart';
 import 'package:homeapp/studentDetails.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,15 +58,27 @@ class MyApp extends StatelessWidget {
  
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create:(context) => MovieProvider(), )
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home:HomeFurniture(),
+        routes: {
+          'filmDetails':(context)=>MovieScreen(),
+           DetailsScreen.routename: (context) {
+          final filmId = ModalRoute.of(context)!.settings.arguments as String;
+          return DetailsScreen(id: filmId); // Pass the filmId to the details screen.
+        },
+          },
+      
       ),
-      home:DrawerExercise(),
-    
     );
   }
 }
